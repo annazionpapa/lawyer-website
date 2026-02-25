@@ -2,6 +2,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cases, resultColors } from "@/data/cases";
 
+const categoryToPractice: Record<string, string> = {
+  "민사": "민사소송",
+  "형사": "형사소송",
+  "이혼·가사": "이혼·가사",
+  "부동산": "부동산",
+  "기업법무": "기업법무",
+  "행정": "행정소송",
+};
+
 type Params = Promise<{ id: string }>;
 
 export function generateStaticParams() {
@@ -224,7 +233,7 @@ export default async function CaseDetailPage({ params }: { params: Params }) {
             전문 변호사가 직접 상담하여 최적의 해결 방안을 안내해드립니다.
           </p>
           <Link
-            href="/contact"
+            href={`/contact?practice=${encodeURIComponent(categoryToPractice[caseItem.category] || "")}`}
             className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors text-lg"
           >
             무료 상담 신청하기

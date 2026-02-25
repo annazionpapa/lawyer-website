@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingCTA from "@/components/FloatingCTA";
-import MobileBottomCTA from "@/components/MobileBottomCTA";
 
 export const metadata: Metadata = {
   title: "정의법률사무소 | 신뢰와 전문성으로 의뢰인의 권리를 지킵니다",
@@ -22,10 +20,6 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <FloatingCTA />
-        <MobileBottomCTA />
-        {/* 모바일 하단 CTA 바 높이만큼 여백 */}
-        <div className="h-16 lg:hidden" />
       </body>
     </html>
   );

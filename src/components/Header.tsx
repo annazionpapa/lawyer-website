@@ -88,39 +88,17 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className={`lg:hidden px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+              isMobileMenuOpen
+                ? "text-navy bg-navy/5"
+                : isScrolled
+                ? "text-navy hover:bg-gray-50"
+                : "text-white hover:bg-white/10"
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="메뉴 열기"
           >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span
-                className={`w-full h-0.5 transition-all duration-300 ${
-                  isMobileMenuOpen
-                    ? "rotate-45 translate-y-2 bg-navy"
-                    : isScrolled
-                    ? "bg-navy"
-                    : "bg-white"
-                }`}
-              />
-              <span
-                className={`w-full h-0.5 transition-all duration-300 ${
-                  isMobileMenuOpen
-                    ? "opacity-0"
-                    : isScrolled
-                    ? "bg-navy"
-                    : "bg-white"
-                }`}
-              />
-              <span
-                className={`w-full h-0.5 transition-all duration-300 ${
-                  isMobileMenuOpen
-                    ? "-rotate-45 -translate-y-2 bg-navy"
-                    : isScrolled
-                    ? "bg-navy"
-                    : "bg-white"
-                }`}
-              />
-            </div>
+            {isMobileMenuOpen ? "닫기" : "메뉴"}
           </button>
         </div>
       </div>
