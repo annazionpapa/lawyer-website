@@ -165,22 +165,22 @@ export default function PracticePage() {
                       ))}
                     </div>
                   </div>
-                  <div className="flex flex-wrap items-center gap-4">
+                  <div className="flex items-center gap-3">
                     <Link
                       href={`/contact?practice=${encodeURIComponent(area.title)}`}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-6 sm:py-3 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors text-sm sm:text-base"
                     >
                       이 분야 상담 신청
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </Link>
                     <Link
                       href={`/cases?category=${encodeURIComponent(casesCategoryMap[area.title] || area.title)}`}
-                      className="inline-flex items-center gap-2 px-6 py-3 border border-navy/20 text-navy font-semibold rounded-lg hover:bg-navy/5 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-6 sm:py-3 border border-navy/20 text-navy font-semibold rounded-lg hover:bg-navy/5 transition-colors text-sm sm:text-base"
                     >
                       성공사례 보기
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </Link>

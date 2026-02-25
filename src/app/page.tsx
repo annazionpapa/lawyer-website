@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScrollRevealCard from "@/components/ScrollRevealCard";
 
 const practiceAreas = [
   {
@@ -257,35 +258,36 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {practiceAreas.map((area) => (
-              <Link
-                key={area.title}
-                href={area.href}
-                className="group rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-xl transition-all duration-300 p-8 block"
-              >
-                <div className="w-16 h-16 bg-navy/5 rounded-xl flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-white transition-all duration-300 mb-6">
-                  {area.icon}
-                </div>
-                <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors">
-                  {area.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{area.desc}</p>
+              <ScrollRevealCard key={area.title} className="scroll-card">
+                <Link
+                  href={area.href}
+                  className="group rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-xl transition-all duration-500 p-8 block h-full"
+                >
+                  <div className="card-icon w-16 h-16 bg-navy/5 rounded-xl flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-white transition-all duration-500 mb-6">
+                    {area.icon}
+                  </div>
+                  <h3 className="card-title text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-500">
+                    {area.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{area.desc}</p>
 
-                {/* 주요 업무 태그 */}
-                <div className="flex flex-wrap gap-2">
-                  {area.services.map((s) => (
-                    <span key={s} className="text-xs bg-gray-50 text-gray-500 px-2.5 py-1 rounded-md">
-                      {s}
-                    </span>
-                  ))}
-                </div>
+                  {/* 주요 업무 태그 */}
+                  <div className="flex flex-wrap gap-2">
+                    {area.services.map((s) => (
+                      <span key={s} className="text-xs bg-gray-50 text-gray-500 px-2.5 py-1 rounded-md">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
 
-                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center text-sm text-gray-400 group-hover:text-gold transition-colors">
-                  자세히 보기
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </Link>
+                  <div className="mt-6 pt-4 border-t border-gray-100 flex items-center text-sm text-gray-400 group-hover:text-gold transition-colors">
+                    자세히 보기
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </Link>
+              </ScrollRevealCard>
             ))}
           </div>
 
