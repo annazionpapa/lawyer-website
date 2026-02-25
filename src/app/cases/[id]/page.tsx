@@ -167,6 +167,25 @@ export default async function CaseDetailPage({ params }: { params: Params }) {
                 {caseItem.outcome}
               </p>
             </div>
+
+            {/* 상담 신청 버튼 */}
+            <div className="bg-white border border-gold/20 rounded-2xl p-8 text-center">
+              <p className="text-navy font-bold text-lg mb-2">
+                비슷한 문제로 고민하고 계신가요?
+              </p>
+              <p className="text-gray-500 text-sm mb-6">
+                {caseItem.category} 분야 전문 변호사가 직접 상담해드립니다. 초기 상담은 무료입니다.
+              </p>
+              <Link
+                href={`/contact?practice=${encodeURIComponent(categoryToPractice[caseItem.category] || "")}`}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors text-lg"
+              >
+                무료 상담 신청하기
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
