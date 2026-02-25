@@ -215,13 +215,28 @@ export default function TeamPage() {
                   </div>
                   <p className="text-gold text-sm mb-4">{lawyer.specialty}</p>
 
-                  <div className="space-y-1 mb-4">
-                    {lawyer.career.slice(0, 2).map((item) => (
-                      <p key={item} className="text-gray-500 text-xs flex items-center gap-1.5">
-                        <span className="w-1 h-1 bg-gray-300 rounded-full shrink-0" />
-                        {item}
-                      </p>
-                    ))}
+                  <div className="mb-3">
+                    <p className="text-xs font-semibold text-navy mb-2 uppercase tracking-wider">학력</p>
+                    <div className="space-y-1">
+                      {lawyer.education.map((item) => (
+                        <p key={item} className="text-gray-500 text-xs flex items-center gap-1.5">
+                          <span className="w-1 h-1 bg-gold rounded-full shrink-0" />
+                          {item}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <p className="text-xs font-semibold text-navy mb-2 uppercase tracking-wider">주요 경력</p>
+                    <div className="space-y-1">
+                      {lawyer.career.map((item) => (
+                        <p key={item} className="text-gray-500 text-xs flex items-center gap-1.5">
+                          <span className="w-1 h-1 bg-gray-300 rounded-full shrink-0" />
+                          {item}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

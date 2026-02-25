@@ -190,15 +190,15 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm">
-              &copy; 2024 정의법률사무소. All rights reserved.
+              &copy; Since 2004 정의법률사무소. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-gray-500 text-sm hover:text-gray-300 transition-colors">
+              <Link href="/privacy" className="text-gray-500 text-sm hover:text-gray-300 transition-colors">
                 개인정보처리방침
-              </a>
-              <a href="#" className="text-gray-500 text-sm hover:text-gray-300 transition-colors">
+              </Link>
+              <Link href="/terms" className="text-gray-500 text-sm hover:text-gray-300 transition-colors">
                 이용약관
-              </a>
+              </Link>
             </div>
           </div>
         </div>

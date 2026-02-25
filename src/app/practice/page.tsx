@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description: "민사소송, 형사소송, 이혼·가사, 부동산, 기업법무, 행정소송 등 폭넓은 법률 서비스를 제공합니다.",
 };
 
+// 업무분야명 → 성공사례 카테고리 매핑
+const casesCategoryMap: Record<string, string> = {
+  "민사소송": "민사",
+  "형사소송": "형사",
+  "이혼·가사": "이혼·가사",
+  "부동산": "부동산",
+  "기업법무": "기업법무",
+  "행정소송": "행정",
+};
+
 const practiceAreas = [
   {
     id: "civil",
@@ -118,7 +128,7 @@ export default function PracticePage() {
               <div
                 key={area.id}
                 id={area.id}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                className={`scroll-mt-28 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
                   idx % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
@@ -155,15 +165,26 @@ export default function PracticePage() {
                       ))}
                     </div>
                   </div>
-                  <Link
-                    href={`/contact?practice=${encodeURIComponent(area.title)}`}
-                    className="inline-flex items-center gap-2 text-gold font-semibold hover:text-gold-light transition-colors"
-                  >
-                    이 분야 상담 신청
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <Link
+                      href={`/contact?practice=${encodeURIComponent(area.title)}`}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors"
+                    >
+                      이 분야 상담 신청
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                    <Link
+                      href={`/cases?category=${encodeURIComponent(casesCategoryMap[area.title] || area.title)}`}
+                      className="inline-flex items-center gap-2 px-6 py-3 border border-navy/20 text-navy font-semibold rounded-lg hover:bg-navy/5 transition-colors"
+                    >
+                      성공사례 보기
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
                 <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
                   <img

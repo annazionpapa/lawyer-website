@@ -11,7 +11,6 @@ const practiceAreas = [
     href: "/practice#civil",
     desc: "손해배상, 계약분쟁, 채권추심 등 민사 전반에 걸친 전문적인 법률 서비스를 제공합니다.",
     services: ["손해배상 청구", "계약 분쟁", "채권 추심", "대여금 반환"],
-    highlight: "건설공사 하자 12억원 승소",
   },
   {
     icon: (
@@ -23,7 +22,6 @@ const practiceAreas = [
     href: "/practice#criminal",
     desc: "수사 단계부터 재판까지, 의뢰인의 권리를 철저히 보호합니다. 신속한 대응과 전략적 변호로 최선의 결과를 이끌어냅니다.",
     services: ["폭행·상해", "사기·횡령", "음주운전", "성범죄"],
-    highlight: "투자 사기 혐의 전면 무죄",
   },
   {
     icon: (
@@ -35,7 +33,6 @@ const practiceAreas = [
     href: "/practice#family",
     desc: "가족 간의 분쟁은 법률적 전문성뿐 아니라 섬세한 접근이 필요합니다. 의뢰인의 감정까지 헤아리며 최선의 해결책을 찾아드립니다.",
     services: ["협의·재판이혼", "양육권·친권", "재산분할", "상속·유류분"],
-    highlight: "재산분할 70% 및 양육권 확보",
   },
   {
     icon: (
@@ -47,7 +44,6 @@ const practiceAreas = [
     href: "/practice#realestate",
     desc: "매매, 임대차, 재개발·재건축 등 부동산 거래부터 분쟁까지 종합적으로 지원합니다.",
     services: ["매매 계약 분쟁", "임대차 분쟁", "재개발·재건축", "명도소송"],
-    highlight: "상가 보증금 8억원 전액 반환",
   },
   {
     icon: (
@@ -59,7 +55,6 @@ const practiceAreas = [
     href: "/practice#corporate",
     desc: "기업의 설립부터 운영, 성장까지 모든 단계에서 필요한 법률 자문을 제공합니다.",
     services: ["법인 설립·변경", "계약서 검토", "M&A", "지식재산권"],
-    highlight: "스타트업 M&A 50억원 자문",
   },
   {
     icon: (
@@ -71,7 +66,6 @@ const practiceAreas = [
     href: "/practice#admin",
     desc: "행정기관의 부당한 처분에 대해 의뢰인의 권리를 적극적으로 대변합니다.",
     services: ["행정처분 취소", "세무소송", "국가배상", "토지보상"],
-    highlight: "부당 과세 2.3억원 환급",
   },
 ];
 
@@ -84,19 +78,76 @@ const stats = [
 
 const testimonials = [
   {
-    content: "복잡한 부동산 분쟁에서 명쾌한 해결책을 제시해주셨습니다. 전문성과 성실함에 깊이 감사드립니다.",
-    name: "김OO",
-    type: "부동산 분쟁 의뢰인",
+    content: "교통사고 보험사에서 제시한 보상금이 너무 낮아 상담을 받았는데, 변호사님이 꼼꼼하게 검토해주셔서 처음 제시 금액의 3배가 넘는 보상을 받았습니다. 혼자 했으면 그냥 받을 뻔했어요.",
+    name: "김○○",
+    category: "민사소송",
+    rating: 5,
   },
   {
-    content: "형사 사건으로 막막했는데, 처음부터 끝까지 세심하게 챙겨주셔서 좋은 결과를 얻을 수 있었습니다.",
-    name: "이OO",
-    type: "형사 사건 의뢰인",
+    content: "갑작스러운 폭행 혐의로 구속될 뻔했는데, 수사 초기 단계부터 빠르게 대응해주신 덕분에 집행유예로 마무리됐습니다. 가족들이 정말 안심했습니다.",
+    name: "이○○",
+    category: "형사소송",
+    rating: 5,
   },
   {
-    content: "이혼 과정에서 정서적으로도 큰 힘이 되어주셨습니다. 공정한 합의를 이끌어주신 덕분에 새 출발을 할 수 있었습니다.",
-    name: "박OO",
-    type: "이혼·가사 의뢰인",
+    content: "이혼 과정에서 양육권과 재산분할이 가장 걱정이었는데, 꼼꼼한 준비 덕분에 아이 양육권도 확보하고 재산분할도 공정하게 받았습니다. 새 출발할 수 있게 해주셔서 감사합니다.",
+    name: "박○○",
+    category: "이혼·가사",
+    rating: 5,
+  },
+  {
+    content: "전세 계약 만료 후 집주인이 보증금을 돌려주지 않아 막막했는데, 상담 후 한 달 만에 전액 회수할 수 있었습니다. 이렇게 빨리 해결될 줄 몰랐어요.",
+    name: "최○○",
+    category: "부동산",
+    rating: 5,
+  },
+  {
+    content: "거래처와의 계약 분쟁으로 수천만 원의 위약금을 물어야 할 상황이었는데, 계약서 분석을 통해 위약금 없이 원만하게 해결해주셨습니다. 사업을 접을 뻔했는데 감사합니다.",
+    name: "정○○",
+    category: "기업법무",
+    rating: 5,
+  },
+  {
+    content: "음주운전으로 면허가 취소될 위기였는데, 변호사님이 감경 사유를 잘 정리해주셔서 벌금형으로 끝낼 수 있었습니다. 생업에 지장 없이 해결돼서 정말 다행입니다.",
+    name: "한○○",
+    category: "형사소송",
+    rating: 5,
+  },
+  {
+    content: "지인에게 빌려준 5천만 원을 3년째 못 받고 있었는데, 다른 곳에서는 어렵다고 했던 걸 증거 확보부터 차근차근 도와주셔서 전액 돌려받았습니다.",
+    name: "윤○○",
+    category: "민사소송",
+    rating: 5,
+  },
+  {
+    content: "식당 위생 문제로 영업정지 처분을 받았는데, 행정소송으로 처분 취소에 성공했습니다. 가게 문을 닫을 뻔한 상황에서 구해주셔서 평생 은인입니다.",
+    name: "서○○",
+    category: "행정소송",
+    rating: 5,
+  },
+  {
+    content: "아버지 돌아가신 후 형제 간 상속 분쟁으로 1년 넘게 갈등이었는데, 법적으로 정확하게 정리해주시면서도 관계가 최대한 덜 상하도록 중재해주셨어요.",
+    name: "강○○",
+    category: "이혼·가사",
+    rating: 5,
+  },
+  {
+    content: "신축 아파트 입주 후 하자가 심각했는데, 시공사가 보수를 미루기만 해서 소송을 진행했습니다. 예상보다 높은 배상금을 받을 수 있었고, 하자 보수도 완료됐습니다.",
+    name: "조○○",
+    category: "부동산",
+    rating: 5,
+  },
+  {
+    content: "부당해고를 당하고 멘탈이 무너졌었는데, 변호사님이 차분하게 절차를 설명해주시고 복직과 밀린 급여까지 모두 받아내주셨습니다. 든든한 지원군이었습니다.",
+    name: "임○○",
+    category: "기업법무",
+    rating: 5,
+  },
+  {
+    content: "온라인에서 악성 댓글과 허위 사실이 퍼져서 큰 피해를 입었는데, 게시물 삭제와 손해배상 모두 성공적으로 받아내주셨습니다. 정신적으로도 많이 회복됐어요.",
+    name: "나○○",
+    category: "민사소송",
+    rating: 5,
   },
 ];
 
@@ -127,11 +178,29 @@ export default function Home() {
               <br />
               지킵니다
             </h1>
-            <p className="text-white/80 text-lg sm:text-xl mb-10 leading-relaxed animate-fade-in-up opacity-0 animate-delay-200">
-              20년 이상의 경험을 바탕으로, 민사·형사·가사·부동산·기업법무까지
+            <p className="text-white/80 text-lg sm:text-xl mb-8 leading-relaxed animate-fade-in-up opacity-0 animate-delay-200">
+              20년 이상의 경험, <span className="text-white font-semibold">3,000건 이상의 상담</span>과{" "}
+              <span className="text-gold font-semibold">95% 승소율</span>을 바탕으로,
               <br className="hidden sm:block" />
-              폭넓은 분야에서 최선의 결과를 만들어갑니다.
+              민사·형사·가사·부동산·기업법무까지 폭넓은 분야에서 최선의 결과를 만들어갑니다.
             </p>
+            {/* 핵심 수치 - 히어로 내 */}
+            <div className="flex flex-wrap items-center gap-6 sm:gap-8 mb-10 animate-fade-in-up opacity-0 animate-delay-250">
+              <div className="flex items-center gap-2">
+                <span className="text-gold font-bold text-2xl sm:text-3xl tracking-tight">3,000+</span>
+                <span className="text-white/60 text-sm">건 상담</span>
+              </div>
+              <div className="w-px h-8 bg-white/20 hidden sm:block" />
+              <div className="flex items-center gap-2">
+                <span className="text-gold font-bold text-2xl sm:text-3xl tracking-tight">95%</span>
+                <span className="text-white/60 text-sm">승소율</span>
+              </div>
+              <div className="w-px h-8 bg-white/20 hidden sm:block" />
+              <div className="flex items-center gap-2">
+                <span className="text-gold font-bold text-2xl sm:text-3xl tracking-tight">500+</span>
+                <span className="text-white/60 text-sm">성공사례</span>
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up opacity-0 animate-delay-300">
               <Link
                 href="/contact"
@@ -191,7 +260,7 @@ export default function Home() {
               <Link
                 key={area.title}
                 href={area.href}
-                className="group p-8 rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-xl transition-all duration-300"
+                className="group rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-xl transition-all duration-300 p-8 block"
               >
                 <div className="w-16 h-16 bg-navy/5 rounded-xl flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-white transition-all duration-300 mb-6">
                   {area.icon}
@@ -202,7 +271,7 @@ export default function Home() {
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{area.desc}</p>
 
                 {/* 주요 업무 태그 */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2">
                   {area.services.map((s) => (
                     <span key={s} className="text-xs bg-gray-50 text-gray-500 px-2.5 py-1 rounded-md">
                       {s}
@@ -210,12 +279,11 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* 대표 성공사례 */}
-                <div className="pt-4 border-t border-gray-100 flex items-center gap-2">
-                  <svg className="w-4 h-4 text-gold shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center text-sm text-gray-400 group-hover:text-gold transition-colors">
+                  자세히 보기
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span className="text-xs text-navy font-medium">{area.highlight}</span>
                 </div>
               </Link>
             ))}
@@ -235,8 +303,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Preview Section */}
+      {/* Testimonials Section */}
       <section className="py-24 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-gold font-medium mb-3">TESTIMONIALS</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy tracking-tight mb-4">
+              의뢰인 후기
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              실제 의뢰인들이 전하는 정의법률사무소 이야기
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((item, idx) => (
+              <div
+                key={idx}
+                className="p-8 bg-white rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow"
+              >
+                {/* 별점 */}
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(item.rating)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                </div>
+                {/* 후기 내용 */}
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">{item.content}</p>
+                {/* 의뢰인 정보 */}
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <div>
+                    <div className="font-semibold text-navy text-sm">{item.name}</div>
+                  </div>
+                  <span className="text-xs text-gold bg-gold/10 px-2.5 py-1 rounded-full font-medium">
+                    {item.category}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs text-gray-400 mt-8">
+            ※ 위 후기는 의뢰인 동의를 받아 게재되었으며, 개인정보 보호를 위해 일부 내용이 변경되었습니다.
+          </p>
+        </div>
+      </section>
+
+      {/* About Preview Section */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -286,39 +402,6 @@ export default function Home() {
                 <div className="text-sm">년의 경험</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-gold font-medium mb-3">TESTIMONIALS</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy tracking-tight mb-4">
-              의뢰인 후기
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              실제 의뢰인들이 전하는 정의법률사무소 이야기
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-8 bg-gray-50 rounded-2xl relative"
-              >
-                <svg className="w-10 h-10 text-gold/20 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
-                </svg>
-                <p className="text-gray-600 leading-relaxed mb-6">{item.content}</p>
-                <div>
-                  <div className="font-semibold text-navy">{item.name}</div>
-                  <div className="text-sm text-gray-400">{item.type}</div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -12,43 +12,6 @@ const practiceOptions = [
   "기타",
 ];
 
-const contactMethods = [
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-    ),
-    title: "전화 상담",
-    info: "02-1234-5678",
-    desc: "평일 09:00 ~ 18:00",
-    action: "tel:02-1234-5678",
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    title: "이메일 상담",
-    info: "contact@justice-law.co.kr",
-    desc: "24시간 접수 가능",
-    action: "mailto:contact@justice-law.co.kr",
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-    title: "방문 상담",
-    info: "서울 서초구 서초대로 250",
-    desc: "사전 예약 필수",
-    action: "#",
-  },
-];
-
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -97,30 +60,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Methods */}
-      <section className="py-16 bg-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {contactMethods.map((method) => (
-              <a
-                key={method.title}
-                href={method.action}
-                className="bg-white p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center text-gold mx-auto mb-4 group-hover:bg-gold group-hover:text-white transition-all">
-                  {method.icon}
-                </div>
-                <h3 className="font-bold text-navy mb-2">{method.title}</h3>
-                <p className="text-gold font-semibold mb-1">{method.info}</p>
-                <p className="text-gray-400 text-sm">{method.desc}</p>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section className="py-24">
+      {/* Contact Form - 최상단 */}
+      <section id="form" className="py-24 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
@@ -286,6 +227,149 @@ export default function ContactPage() {
               </p>
             </form>
           )}
+        </div>
+      </section>
+
+      {/* 다른 상담 방법 */}
+      <section className="py-16 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold text-navy tracking-tight mb-3">
+              다른 상담 방법
+            </h2>
+            <p className="text-gray-500 text-sm">
+              온라인 외에도 다양한 방법으로 상담하실 수 있습니다
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a
+              href="tel:02-1234-5678"
+              className="bg-white p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center text-gold mx-auto mb-4 group-hover:bg-gold group-hover:text-white transition-all">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-navy mb-2">전화 상담</h3>
+              <p className="text-gold font-semibold mb-1">02-1234-5678</p>
+              <p className="text-gray-400 text-sm">평일 09:00 ~ 18:00</p>
+            </a>
+            <a
+              href="mailto:contact@justice-law.co.kr"
+              className="bg-white p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center text-gold mx-auto mb-4 group-hover:bg-gold group-hover:text-white transition-all">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-navy mb-2">이메일 상담</h3>
+              <p className="text-gold font-semibold mb-1">contact@justice-law.co.kr</p>
+              <p className="text-gray-400 text-sm">24시간 접수 가능</p>
+            </a>
+            <a
+              href="#map"
+              className="bg-white p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center text-gold mx-auto mb-4 group-hover:bg-gold group-hover:text-white transition-all">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-navy mb-2">방문 상담</h3>
+              <p className="text-gold font-semibold mb-1">서울 서초구 서초대로 250</p>
+              <p className="text-gray-400 text-sm">사전 예약 필수</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Map & Visit Info */}
+      <section id="map" className="py-16 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
+              찾아오시는 길
+            </h2>
+            <p className="text-gray-500">
+              서울 서초구 서초대로 250, 정의빌딩 12층
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* 지도 */}
+            <div className="lg:col-span-2 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.354!2d127.0016!3d37.4917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca159e0a2a271%3A0x6a0e85f4d4b1c8b0!2z7ISc7LSI64yA66GcIDI1MA!5e0!3m2!1sko!2skr!4v1"
+                className="w-full h-full min-h-[400px]"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="정의법률사무소 위치"
+              />
+            </div>
+
+            {/* 방문 안내 */}
+            <div className="space-y-6">
+              {/* 사전 예약 필수 경고 */}
+              <div className="bg-gold/10 border border-gold/30 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gold rounded-full flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-navy text-lg">사전 예약 필수</h3>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  방문 상담은 <strong className="text-navy">사전 예약제</strong>로 운영됩니다.
+                  예약 없이 방문하시면 상담이 어려울 수 있으니,
+                  반드시 전화 또는 온라인으로 먼저 예약해주세요.
+                </p>
+              </div>
+
+              {/* 교통편 안내 */}
+              <div className="bg-white border border-gray-100 rounded-2xl p-6 space-y-4">
+                <h3 className="font-bold text-navy">교통 안내</h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xs font-bold bg-green-500 text-white px-2 py-0.5 rounded mt-0.5 shrink-0">지하철</span>
+                    <p className="text-gray-600 text-sm">2호선 서초역 3번 출구 도보 5분</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-xs font-bold bg-blue-500 text-white px-2 py-0.5 rounded mt-0.5 shrink-0">버스</span>
+                    <p className="text-gray-600 text-sm">서초역 정류장 하차 (140, 401, 406)</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-xs font-bold bg-gray-500 text-white px-2 py-0.5 rounded mt-0.5 shrink-0">주차</span>
+                    <p className="text-gray-600 text-sm">건물 지하 주차장 이용 (2시간 무료)</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 운영시간 */}
+              <div className="bg-white border border-gray-100 rounded-2xl p-6">
+                <h3 className="font-bold text-navy mb-3">운영시간</h3>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">평일</span>
+                    <span className="text-navy font-medium">09:00 ~ 18:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">토요일</span>
+                    <span className="text-navy font-medium">사전 예약 시 상담 가능</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">일요일·공휴일</span>
+                    <span className="text-gray-400">휴무</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

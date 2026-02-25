@@ -1,11 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { cases, categories, resultColors } from "@/data/cases";
 
-export default function CasesPage() {
+function CasesContent() {
+  const searchParams = useSearchParams();
+  const categoryFromUrl = searchParams.get("category");
   const [activeCategory, setActiveCategory] = useState("전체");
+
+  // URL 파라미터로 카테고리 필터 연동
+  useEffect(() => {
+    if (categoryFromUrl && categories.includes(categoryFromUrl)) {
+      setActiveCategory(categoryFromUrl);
+    }
+  }, [categoryFromUrl]);
 
   const filteredCases =
     activeCategory === "전체"
@@ -164,5 +174,13 @@ export default function CasesPage() {
         </div>
       </section>
     </>
+  );
+}
+
+export default function CasesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen" />}>
+      <CasesContent />
+    </Suspense>
   );
 }
