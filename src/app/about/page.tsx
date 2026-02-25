@@ -180,10 +180,10 @@ export default function AboutPage() {
 
                   <div className={`flex-1 pl-12 md:pl-0 ${idx % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
                     {idx % 2 === 0 ? null : (
-                      <>
+                      <div className="hidden md:block">
                         <div className="text-2xl font-bold text-gold tracking-tight">{item.year}</div>
                         <div className="text-gray-600 mt-1">{item.event}</div>
-                      </>
+                      </div>
                     )}
                     <div className="md:hidden">
                       <div className="text-2xl font-bold text-gold tracking-tight">{item.year}</div>
